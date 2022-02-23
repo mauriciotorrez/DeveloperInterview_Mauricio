@@ -1,5 +1,5 @@
-# react-interview
-React front-end interview 2020
+# Overview
+React front-end and .net core web api interview 2022
 
 Develop a website that displays a random company name and 10 random cat images from the Cats as a Service (http://cataas.com) api.
 
