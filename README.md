@@ -30,7 +30,7 @@ Develop a website that displays a random company name and 10 random cat images f
 * Everyone uses stack overflow. If you have any problems while coding, and you find the solution on stack overflow, please add a link to that answer in comments near the relevant code.
 
 ## Bonus Points:
-* Currently the web api has a GET endpoint for `/api/cats`. This returns a single cat image. More effective api usage would contain an api endpoint for a list of `n` cats.
+* Currently the web api has a GET endpoint for `/api/cats`. This returns a single cat image. More effective api design would include an endpoint that returns a list of `n` cats.
   * New API cats controller endpoint, `GetCats` that accepts a parameter `n`.
   * Responds with a `List<Cat>` of size `n`.
   * Unit Tests on `GetCats` should be set up in the `APITests` project and passing.
