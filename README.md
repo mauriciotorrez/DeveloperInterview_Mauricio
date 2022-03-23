@@ -16,7 +16,7 @@ Develop a website that displays a random company name and 10 random cat images f
 * Display 10 images of cats on the page:
   * Images are sourced from a GET request to the api endpoint api/cats,
   * Use `fetch` to obtain the random cat image URL as well as the tags from the api.
-  * Display images with the `source` property obtained from the  `url` field of the api response.
+  * Display images with the `src` property obtained from the  `url` field of the api response.
   * Beneath the image, display a string list of tags from the `tags` array property of the api response.
   * Each image should be unique,
   * The images are displayed in a responsive grid:
