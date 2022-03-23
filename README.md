@@ -22,7 +22,7 @@ Develop a website that displays a random company name and 10 random cat images f
   * The images are displayed in a responsive grid:
     * desktop ( `w > 1000`) should display a `5 x 2` grid,
     * tablet ( `500 < w < 1000`) should display a `2 x 5` grid,
-    * mobile ( `w < 500` ) should display a `1 x 5` column. 
+    * mobile ( `w < 500` ) should display a `1 x 10` column. 
   * *Bonus*: Tint each image of a cat a random color.
 
 ## Things to Consider:
