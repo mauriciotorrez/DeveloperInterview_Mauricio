@@ -4,6 +4,7 @@ using API.Models;
 using Microsoft.Extensions.Configuration;
 using APITest;
 using System.Threading.Tasks;
+using System.Linq;
 
 namespace API.UnitTests.Services
 {
@@ -23,6 +24,24 @@ namespace API.UnitTests.Services
         {
             var cat = await catService.GetCat();
             Assert.IsInstanceOf<Cat>(cat);
+            return;
+        }
+
+        [Test]
+        public async Task ShouldGetCatsGivenSize()
+        {
+            var size = 3;
+            var catList = await catService.GetCats(size);
+            Assert.IsTrue(catList.Count == size);
+            return;
+        }
+
+        [Test]
+        public async Task ShouldUniqueGetCatsGivenSize()
+        {
+            var size = 10;
+            var catList = await catService.GetCats(size);
+            Assert.IsTrue(catList.Distinct().Count() == size);
             return;
         }
     }

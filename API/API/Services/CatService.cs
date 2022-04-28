@@ -3,6 +3,8 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Net.Http.Headers;
 using Newtonsoft.Json;
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using System.Net.Http;
 using System.Threading.Tasks;
 
@@ -33,6 +35,26 @@ namespace API.Services
             using var jsonReader = new JsonTextReader(streamReader);
             var cat = serializer.Deserialize<Cat>(jsonReader);
             return cat;
+        }
+
+        public async Task<List<Cat>> GetCats(int size)
+        {
+            var catList = new List<Cat>();
+            if (size >= 0)
+            {
+                while (catList.Count < size) 
+                {
+                    var cat = await GetCat();
+                    var catUnique = catList.Where(c => c.id == cat.id);
+                    if (catUnique != null && catUnique.Count() > 0)
+                    {
+                        continue;
+                    }
+                    catList.Add(cat);
+                }
+            }
+            
+            return catList;
         }
     }
 }

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace API.Controllers
 {
-    [Route("api/[controller]")]
+    [Route("api/[controller]/[action]")]
     [ApiController]
     public class CatsController : ControllerBase
     {
@@ -20,9 +20,15 @@ namespace API.Controllers
             _dataService = dataService;
         }
         [HttpGet]
-        public async Task<Cat> Get()
+        public async Task<Cat> Cats()
         {
             return await _dataService.GetCat();
+        }
+
+        [HttpGet]
+        public async Task<List<Cat>> GetCats(int size)
+        {
+            return await _dataService.GetCats(size);
         }
     }
 }
